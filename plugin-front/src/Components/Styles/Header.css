@@ -1,0 +1,60 @@
+#header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    width: 100%;
+    height: 50px;
+}
+
+#header .contentArea {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1280px;
+}
+
+#header .contentArea .logo {
+    height: 100%;
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--col-black);
+}
+
+#header .contentArea .nav {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+#header .contentArea .nav .link {
+    font-size: 15px;
+    color: var(--col-gray-1);
+}
+
+#header .contentArea .func {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-sm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    background: var(--col-blue);
+    border: 1px solid var(--col-sky);
+    outline: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--col-white);
+}
