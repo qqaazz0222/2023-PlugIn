@@ -1,8 +1,24 @@
+import { useEffect, useState } from "react";
+import Button from "./Button";
 import "./Styles/Header.css";
 
 const Header = () => {
+    const [isTop, setIsTop] = useState(true);
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+    const handleScroll = () => {
+        if (window.scrollY > 10) {
+            setIsTop(false);
+        } else {
+            setIsTop(true);
+        }
+    };
     return (
-        <div id="header">
+        <div id="header" className={isTop ? "" : "active"}>
             <div className="contentArea">
                 <div className="logo">PlugInSMS</div>
                 <div className="nav">
@@ -11,7 +27,7 @@ const Header = () => {
                     <div className="link">북마크</div>
                 </div>
                 <div className="func">
-                    <button className="btn-sm">로그인</button>
+                    <Button type={"btn btn-sm"} text={"로그인"} />
                 </div>
             </div>
         </div>

@@ -1,0 +1,32 @@
+#promotion {
+    display: flex;
+    flex-direction: column;
+}
+
+#promotion .mainText {
+    margin-bottom: 20px;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+#promotion .subText {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+#promotion .subText p {
+    margin: 0;
+    padding: 0;
+
+}
+
+#promotion .btnWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}

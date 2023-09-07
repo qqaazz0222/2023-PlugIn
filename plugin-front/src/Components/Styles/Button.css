@@ -1,0 +1,40 @@
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    background: var(--col-blue);
+    border: 1px solid var(--col-sky);
+    outline: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--col-white);
+    box-shadow: 0 2px 4px rgba(0, 79, 255, .3);
+    transition: box-shadow .3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    box-shadow: 0 3px 12px rgba(0, 79, 255, .3);
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-sub {
+    background: var(--col-light-sky);
+    border: 1px solid var(--col-light-sky);
+    color: var(--col-blue);
+    box-shadow: 0 2px 4px rgba(188, 207, 250, .4);
+    transition: box-shadow .3s;
+
+}
+
+.btn-sub:hover {
+    box-shadow: 0 3px 12px rgba(188, 207, 250, .7)
+}
