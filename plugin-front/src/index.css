@@ -7,13 +7,14 @@
 }
 
 :root {
-    --col-blue: #004FFF;
+    --col-blue: rgb(0, 79, 255);
     --col-sky: #4c83ff;
     --col-light-sky: #d0ddfc;
     --col-black: #17191A;
     --col-gray-1: #464a4d;
     --col-gray-2: #757b80;
     --col-white: #FFFFFF;
+    --content-max-width: 1240px;
 }
 
 * {

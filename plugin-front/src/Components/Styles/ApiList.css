@@ -1,0 +1,110 @@
+#apiList {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: calc(100% - 40px);
+    max-width: var(--content-max-width);
+}
+
+#apiList .title {
+    margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--col-black);
+}
+
+#apiList .content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 36px;
+}
+
+#apiList .content .categoryWrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#apiList .content .categoryWrap .title {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 4px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--col-black);
+    transition: color .3s;
+}
+
+#apiList .content .categoryWrap .title:hover {
+    color: var(--col-gray-2);
+}
+
+#apiList .content .categoryWrap .title .amount {
+    padding: 3px 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--col-gray-2);
+}
+
+#apiList .content .categoryWrap .itemList {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+#apiList .content .categoryWrap .itemList .item {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+#apiList .content .categoryWrap .itemList .item .imgWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 96px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#apiList .content .categoryWrap .itemList .item .imgWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: width .3s, height .3s;
+}
+
+#apiList .content .categoryWrap .itemList .item:hover .imgWrap img {
+    width: 110%;
+    height: 110%;
+}
+
+#apiList .content .categoryWrap .itemList .item .infoWrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 6px 0;
+}
+
+#apiList .content .categoryWrap .itemList .item .infoWrap .title {
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--col-black);
+    transition: color .3s;
+}
+
+#apiList .content .categoryWrap .itemList .item:hover .infoWrap .title {
+    color: var(--col-gray-2);
+}
+
+#apiList .content .categoryWrap .itemList .item .infoWrap .desc {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--col-gray-1);
+}
