@@ -5,6 +5,8 @@ import "./App.css";
 import RootLayout from "./Layouts/RootLayout";
 // 화면
 import Main from "./Pages/Main";
+import { SignIn, SignUp } from "./Pages/Sign";
+import SignLayout from "./Layouts/SignLayout";
 
 function App() {
     return (
@@ -13,6 +15,10 @@ function App() {
                 <Routes>
                     <Route element={<RootLayout />}>
                         <Route path="/" element={<Main />} />
+                    </Route>
+                    <Route element={<SignLayout />}>
+                        <Route path="/signin" element={<SignIn />} />
+                        <Route path="/signup" element={<SignUp />} />
                     </Route>
                     <Route path="/*" element={<Main />} />
                 </Routes>

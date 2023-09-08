@@ -1,0 +1,74 @@
+#signLayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 98svh;
+    background-image: url(./../../Images/logo1200_w.png);
+    background-size: 920px;
+    background-position: 120% 50%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#signLayout #headerWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+#signLayout #headerWrap .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6px;
+    width: 64px;
+    height: 64px;
+    color: var(--col-white);
+}
+
+#signLayout #headerWrap .siteName {
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--col-black);
+}
+
+#signLayout #headerWrap .pageName {
+    font-size: 36px;
+    font-weight: 200;
+    color: var(--col-black);
+}
+
+#signLayout #content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 400px;
+}
+
+#signLayout .footerWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#signLayout .footerWrap p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--col-gray-2);
+    transition: color .3s;
+}
+
+#signLayout .footerWrap p:hover {
+    color: var(--col-gray-1);
+}

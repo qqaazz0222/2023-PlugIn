@@ -1,0 +1,45 @@
+.inputWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    border: 1px solid #cdcdcd;
+    border-radius: 12px;
+    outline: none;
+    overflow: hidden;
+    box-shadow: none;
+    transition: border .3s, box-shadow .3s;
+}
+
+.inputWrap:hover {
+    border: 1px solid var(--col-gray-2)
+}
+
+.inputWrap.active {
+    border: 1px solid var(--col-blue);
+    box-shadow: 0 2px 8px rgba(0, 79, 255, .1);
+}
+
+.inputWrap input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+}
+
+.inputWrap .iconWrap {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+}
+
+.errMsg {
+    margin-top: -4px;
+    margin-bottom: 4px;
+    padding: 0px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--col-red);
+}
