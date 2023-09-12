@@ -24,7 +24,7 @@ const Banner = ({ data }) => {
     useEffect(() => {
         const target = document.getElementById("bannerList");
         const bannerX = document.getElementById("banner").clientWidth;
-        target.style.translate = `-${nowDisplay * bannerX}px 0`;
+        target.style.translate = `-${nowDisplay * (bannerX + 40)}px 0`;
     }, [nowDisplay]);
     return (
         <div id="banner">

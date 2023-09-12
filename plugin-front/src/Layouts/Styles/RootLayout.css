@@ -22,6 +22,6 @@
     left: 50%;
     padding-top: 80px;
     width: 100%;
-    min-height: 100vh;
+    min-height: calc(100svh - 80px);
     transform: translateX(-50%);
 }

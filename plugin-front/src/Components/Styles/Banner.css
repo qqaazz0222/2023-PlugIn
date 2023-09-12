@@ -1,6 +1,7 @@
 #banner {
     display: block;
-    width: 100%;
+    margin: 0 20px;
+    width: calc(100% - 40px);
     max-width: var(--content-max-width);
     height: 160px;
     border-radius: 12px;

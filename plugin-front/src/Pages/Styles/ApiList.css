@@ -1,0 +1,60 @@
+#apiList {
+    position: relative;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    height: calc(100svh - 80px);
+    overflow: hidden;
+}
+
+#apiList .sideWrap {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 24px;
+    width: 140px;
+    height: calc(100% - 48px);
+    border-right: 1px solid var(--col-gray-5);
+}
+
+#sideBar {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#sideBar .group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#sideBar .group .title {
+    margin-bottom: -4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--col-gray-2);
+}
+
+#sideBar .group .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+#sideBar .group .item .icon,
+#sideBar .group .item .icon img {
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#sideBar .group .item .text {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--col-black);
+}

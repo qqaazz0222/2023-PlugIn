@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "./Button";
 import "./Styles/Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [isTop, setIsTop] = useState(true);
@@ -20,11 +21,19 @@ const Header = () => {
     return (
         <div id="header" className={isTop ? "" : "active"}>
             <div className="contentArea">
-                <div className="logo">PlugInSMS</div>
+                <Link to="/" className="logo">
+                    PlugInSMS
+                </Link>
                 <div className="nav">
-                    <div className="link">API 목록</div>
-                    <div className="link">소식</div>
-                    <div className="link">북마크</div>
+                    <Link to="/api" className="link">
+                        API 목록
+                    </Link>
+                    <Link to="/notice" className="link">
+                        소식
+                    </Link>
+                    <Link to="/bookmark" className="link">
+                        북마크
+                    </Link>
                 </div>
                 <div className="func">
                     <Button type={"btn btn-sm"} text={"로그인"} />

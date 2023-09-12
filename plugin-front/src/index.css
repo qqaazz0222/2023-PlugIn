@@ -14,6 +14,7 @@
     --col-black: #17191A;
     --col-gray-1: #464a4d;
     --col-gray-2: #757b80;
+    --col-gray-5: #E8EEF2;
     --col-white: #FFFFFF;
     --content-max-width: 1240px;
 }
@@ -26,4 +27,8 @@
 html {
     margin: 0;
     padding: 0;
+}
+
+a {
+    text-decoration: none;
 }
