@@ -4,6 +4,7 @@
     padding: 20px;
     width: calc(100% - 40px);
     max-width: var(--content-max-width);
+    opacity: 0;
 }
 
 #apiList .title {

@@ -11,6 +11,7 @@
     background-position: 120% 50%;
     background-repeat: no-repeat;
     overflow: hidden;
+    animation: FadeIn 1s;
 }
 
 #signLayout #headerWrap {

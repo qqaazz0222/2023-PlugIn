@@ -14,7 +14,9 @@
     --col-black: #17191A;
     --col-gray-1: #464a4d;
     --col-gray-2: #757b80;
+    --col-gray-3: #9B9D9F;
     --col-gray-5: #E8EEF2;
+    --col-gray-6: #F2F8FC;
     --col-white: #FFFFFF;
     --content-max-width: 1240px;
 }
@@ -31,4 +33,15 @@ html {
 
 a {
     text-decoration: none;
+}
+
+@keyframes FadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
 }

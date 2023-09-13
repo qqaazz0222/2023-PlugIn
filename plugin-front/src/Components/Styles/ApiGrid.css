@@ -1,0 +1,255 @@
+#apiGrid {
+    display: grid;
+    padding: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    max-height: calc(100% - 40px);
+    overflow: scroll;
+}
+
+#apiGrid.card {
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 280px;
+    grid-gap: 16px;
+}
+
+@media (max-width: 1920px) {
+    #apiGrid.card {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 1600px) {
+    #apiGrid.card {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1240px) {
+    #apiGrid.card {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 960px) {
+    #apiGrid.card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    #apiGrid.card {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+#apiGrid.list {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 72px;
+    grid-gap: 16px;
+}
+
+.apiItem {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: var(--col-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, .05);
+    transition: scale .3s;
+    cursor: pointer;
+}
+
+#apiGrid.card .apiItem {
+    flex-direction: column;
+}
+
+#apiGrid.list .apiItem {
+    flex-direction: row;
+}
+
+#apiGrid.card .apiItem:hover {
+    scale: 1.025;
+    z-index: 1;
+}
+
+#apiGrid.list .apiItem:hover {
+    scale: 1.01;
+    z-index: 1;
+}
+
+#apiGrid.card .apiItem .thumb {
+    flex: 1;
+    width: 100%;
+    background-image: url(../../Images/logo1200_w.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid var(--col-gray-5);
+}
+
+#apiGrid.card .apiItem .infoWrap {
+    padding: 12px 20px 20px 20px;
+}
+
+#apiGrid.card .apiItem .infoWrap .titleWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+#apiGrid.card .apiItem .infoWrap .name {
+    flex: 1;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--col-black);
+}
+
+#apiGrid.card .apiItem .infoWrap .like {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px;
+    fill: var(--col-blue);
+    border: 1px solid var(--col-gray-5);
+    border-radius: 48px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--col-blue);
+    transition: background .3s, fill .3s, color .3s;
+}
+
+#apiGrid.card .apiItem .infoWrap .like:hover {
+    background: var(--col-blue);
+    border: 1px solid var(--col-sky);
+    fill: var(--col-white);
+    color: var(--col-white);
+}
+
+#apiGrid.card .apiItem .infoWrap .desc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-bottom: 12px;
+    height: 32px;
+    max-height: 32px;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--col-gray-2);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#apiGrid.card .apiItem .infoWrap .price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--col-gray-1);
+}
+
+#apiGrid.card .apiItem .infoWrap .price strong {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--col-black);
+}
+
+#apiGrid.card .apiItem .infoWrap .price img {
+    width: 24px;
+    border: 1px solid var(--col-gray-5);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+#apiGrid.list .apiItem .thumb {
+    width: 96px;
+    background-image: url(../../Images/logo1200_w.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-right: 1px solid var(--col-gray-5);
+}
+
+#apiGrid.list .apiItem .infoWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: calc(100% - 40px);
+    padding: 20px;
+    gap: 16px;
+}
+
+#apiGrid.list .apiItem .infoWrap .titleWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+#apiGrid.list .apiItem .infoWrap .name {
+    flex: 1;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--col-black);
+}
+
+#apiGrid.list .apiItem .infoWrap .like {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px;
+    fill: var(--col-blue);
+    border: 1px solid var(--col-gray-5);
+    border-radius: 48px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--col-blue);
+    transition: background .3s, fill .3s, color .3s;
+}
+
+#apiGrid.list .apiItem .infoWrap .like:hover {
+    background: var(--col-blue);
+    border: 1px solid var(--col-sky);
+    fill: var(--col-white);
+    color: var(--col-white);
+}
+
+#apiGrid.list .apiItem .infoWrap .desc {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--col-gray-2);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#apiGrid.list .apiItem .infoWrap .price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--col-gray-1);
+}
+
+#apiGrid.list .apiItem .infoWrap .price strong {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--col-black);
+}
+
+#apiGrid.list .apiItem .infoWrap .price img {
+    width: 24px;
+    border: 1px solid var(--col-gray-5);
+    border-radius: 2px;
+    overflow: hidden;
+}

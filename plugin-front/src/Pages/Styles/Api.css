@@ -1,0 +1,25 @@
+#api {
+    position: relative;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    height: calc(100svh - 80px);
+    overflow: hidden;
+    animation: FadeIn 1s;
+}
+
+#api .sideWrap {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    width: 152px;
+    height: calc(100% - 48px);
+    border-right: 1px solid var(--col-gray-5);
+}
+
+#api .contentWrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}

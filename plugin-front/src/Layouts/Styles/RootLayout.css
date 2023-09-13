@@ -3,6 +3,7 @@
     height: 100%;
     max-height: 100%;
     overflow: hidden;
+    animation: FadeIn 1s;
 }
 
 #rootLayout #headerWrap {

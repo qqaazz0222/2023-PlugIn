@@ -8,6 +8,7 @@ const persistConfig = {
 
 const initialState = {
     userData: {},
+    isLoading: false,
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -18,6 +19,12 @@ const rootReducer = (state = initialState, action) => {
             return temp;
         case "CLEAR_VISIBLE_HEADER":
             temp.userData = {};
+            return temp;
+        case "SET_LOADING_START":
+            temp.isLoading = true;
+            return temp;
+        case "SET_LOADING_END":
+            temp.isLoading = false;
             return temp;
         default:
             return state;

@@ -1,0 +1,56 @@
+#loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+#loading .barWrap {
+    display: block;
+    position: relative;
+    width: 240px;
+    height: 8px;
+    border-radius: 6px;
+    background: rgba(0, 79, 255, 0.3);
+    overflow: hidden;
+}
+
+#loading .barWrap .bar {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 120px;
+    height: 8px;
+    border-radius: 6px;
+    background: rgba(0, 79, 255, 0.75);
+    animation: Loading 1.5s infinite;
+}
+
+@keyframes Loading {
+    0% {
+        background: rgba(0, 79, 255, 0);
+        left: -100%;
+        width: 80px;
+    }
+
+    50% {
+        background: rgba(0, 79, 255, 0.75);
+        width: 160px;
+    }
+
+    100% {
+        background: rgba(0, 79, 255, 0);
+        left: 100%;
+        width: 80px;
+    }
+
+}

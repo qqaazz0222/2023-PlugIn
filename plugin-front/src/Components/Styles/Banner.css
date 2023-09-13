@@ -6,6 +6,7 @@
     height: 160px;
     border-radius: 12px;
     overflow: hidden;
+    opacity: 0;
 }
 
 #banner .contentWrap {

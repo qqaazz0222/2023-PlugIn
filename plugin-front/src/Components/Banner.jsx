@@ -1,9 +1,20 @@
 import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 import "./Styles/Banner.css";
 
 const Banner = ({ data }) => {
     const [nowDisplay, setNowDisplay] = useState(0);
+    const [ref, inView] = useInView();
+    const [style, setStyle] = useState({});
+    useEffect(() => {
+        if (inView) {
+            setStyle({
+                animation: "FadeUp 1s .5s",
+                animationFillMode: "forwards",
+            });
+        }
+    }, [inView]);
     useEffect(() => {
         const bannerN =
             document.getElementsByClassName("bannerItem").length - 1;
@@ -24,10 +35,10 @@ const Banner = ({ data }) => {
     useEffect(() => {
         const target = document.getElementById("bannerList");
         const bannerX = document.getElementById("banner").clientWidth;
-        target.style.translate = `-${nowDisplay * (bannerX + 40)}px 0`;
+        target.style.translate = `-${nowDisplay * bannerX}px 0`;
     }, [nowDisplay]);
     return (
-        <div id="banner">
+        <div id="banner" ref={ref} style={style}>
             <div id="bannerList" className="contentWrap">
                 {data.map((item, idx) => (
                     <div className="bannerItem">

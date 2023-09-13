@@ -48,6 +48,8 @@
 }
 
 #header .contentArea .nav .link {
+    padding: 6px 8px;
+    border-radius: 6px;
     font-size: 15px;
     color: var(--col-gray-1);
     transition: color .3s;
@@ -56,6 +58,12 @@
 
 #header .contentArea .nav .link:hover {
     color: var(--col-gray-2);
+}
+
+#header .contentArea .nav .link.active,
+#header .contentArea .nav .link.active:hover {
+    background: var(--col-gray-6);
+    color: var(--col-gray-1);
 }
 
 #header .contentArea .func {

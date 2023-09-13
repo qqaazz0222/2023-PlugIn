@@ -1,9 +1,21 @@
 import "./Styles/ApiList.css";
 import Sample from "./Images/imgSample.png";
+import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const ApiList = ({ title, data }) => {
+    const [ref, inView] = useInView();
+    const [style, setStyle] = useState({});
+    useEffect(() => {
+        if (inView) {
+            setStyle({
+                animation: "FadeUp 1s .5s",
+                animationFillMode: "forwards",
+            });
+        }
+    }, [inView]);
     return (
-        <div id="apiList">
+        <div id="apiList" ref={ref} style={style}>
             <div className="title">{title}</div>
             <div className="content">
                 {data.col1 ? (

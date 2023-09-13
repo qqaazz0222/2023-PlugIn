@@ -5,4 +5,5 @@
     padding: 120px 0;
     width: 100%;
     gap: 160px;
+    animation: FadeIn 1s;
 }

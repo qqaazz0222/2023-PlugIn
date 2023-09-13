@@ -1,0 +1,22 @@
+#apiSearch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20px;
+    width: calc(100% - 40px);
+    height: 48px;
+    border-bottom: 1px solid var(--col-gray-5);
+    gap: 12px;
+}
+
+#apiSearch .query {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--col-black);
+}
+
+#apiSearch .query::placeholder {
+    color: var(--col-gray-3);
+}
