@@ -17,7 +17,8 @@ const SignUp = () => {
         <div id="signUp" className="signWrap">
             <EmailInput />
             <PasswordInput />
-            <Button type={"btn"} text={"로그인"} />
+            <PasswordInput />
+            <Button type={"btn"} text={"회원가입"} />
         </div>
     );
 };

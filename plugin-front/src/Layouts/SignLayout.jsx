@@ -33,7 +33,12 @@ const SignLayout = () => {
                             </p>
                         </>
                     ) : (
-                        <></>
+                        <>
+                            <p>
+                                이미 회원이신가요?{" "}
+                                <Link to={"/signin"}>로그인</Link>
+                            </p>
+                        </>
                     )}
                 </div>
             </div>

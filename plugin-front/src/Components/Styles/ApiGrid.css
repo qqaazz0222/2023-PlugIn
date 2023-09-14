@@ -129,6 +129,24 @@
     color: var(--col-white);
 }
 
+#apiGrid.card .apiItem .infoWrap .like.active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px;
+    background: var(--col-blue);
+    fill: var(--col-white);
+    border: 1px solid var(--col-sky);
+    border-radius: 48px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--col-white);
+
+    transition: background .3s, fill .3s, color .3s;
+}
+
+
 #apiGrid.card .apiItem .infoWrap .desc {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -220,6 +238,23 @@
     fill: var(--col-white);
     color: var(--col-white);
 }
+
+#apiGrid.list .apiItem .infoWrap .like.active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px;
+    background: var(--col-blue);
+    fill: var(--col-white);
+    border: 1px solid var(--col-sky);
+    border-radius: 48px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--col-white);
+    transition: background .3s, fill .3s, color .3s;
+}
+
 
 #apiGrid.list .apiItem .infoWrap .desc {
     flex: 1;

@@ -1,7 +1,7 @@
 #promotion {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 120px 20px;
     width: calc(100% - 40px);
     max-width: var(--content-max-width);
 }
