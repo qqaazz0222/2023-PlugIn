@@ -1,8 +1,10 @@
 import "./Styles/ApiGrid.css";
 import KO from "./Svg/flags/kr.svg";
 import US from "./Svg/flags/us.svg";
+import { useNavigate } from "react-router-dom";
 
 const ApiGrid = ({ type, data }) => {
+    const navigate = useNavigate();
     const likeData = {
         API1: true,
         API2: false,
@@ -15,7 +17,7 @@ const ApiGrid = ({ type, data }) => {
     const toggleLike = (e) => {
         e.target.classList.toggle("active");
         const bef = e.target.innerHTML.split("</svg>");
-        if (bef[1] != "999+") {
+        if (bef[1] !== "999+") {
             let num = parseInt(bef[1]);
             if (e.target.classList.length === 1) {
                 num -= 1;
@@ -30,7 +32,12 @@ const ApiGrid = ({ type, data }) => {
     return (
         <div id="apiGrid" className={type}>
             {data.map((item, idx) => (
-                <div className="apiItem">
+                <div
+                    className="apiItem"
+                    onClick={() => {
+                        navigate(`/api/${item.name}`);
+                    }}
+                >
                     <div className="thumb"></div>
                     <div className="infoWrap">
                         <div className="titleWrap">

@@ -7,6 +7,7 @@ import RootLayout from "./Layouts/RootLayout";
 // 화면
 import Main from "./Pages/Main";
 import Api from "./Pages/Api";
+import ApiDetail from "./Pages/ApiDetail";
 import { SignIn, SignUp } from "./Pages/Sign";
 import SignLayout from "./Layouts/SignLayout";
 import Loading from "./Components/Loading";
@@ -20,6 +21,7 @@ function App() {
                     <Route element={<RootLayout />}>
                         <Route path="/" element={<Main />} />
                         <Route path="/api" element={<Api />} />
+                        <Route path="/api/:id" element={<ApiDetail />} />
                     </Route>
                     <Route element={<SignLayout />}>
                         <Route path="/signin" element={<SignIn />} />
