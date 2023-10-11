@@ -5,4 +5,29 @@
     padding: 20px;
     width: 100%;
     max-width: var(--content-max-width);
+    position: relative;
+}
+
+.textWrap {
+    width: 400px;
+}
+
+.textWrap>.inputWrap {
+    margin: 5px;
+}
+
+.inputWrap>.help_msg {
+    width: 10px;
+}
+
+.api_btn {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.api_btn>.btn {
+    flex: 1;
+    margin: 5px;
 }

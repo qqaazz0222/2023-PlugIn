@@ -1,6 +1,6 @@
 import "./Styles/Button.css";
-const Button = ({ type, text }) => {
-    return <button className={type}>{text}</button>;
+const Button = ({ type, text, onclick }) => {
+    return <button className={type} onClick={onclick}>{text}</button>;
 };
 
 export default Button;

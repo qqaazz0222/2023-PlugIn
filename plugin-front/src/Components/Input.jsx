@@ -8,7 +8,7 @@ const TextInput = () => {
         </div>
     );
 };
-const EmailInput = () => {
+const EmailInput = ({ setaccount }) => {
     const [email, setEmail] = useState("");
     const [confirmEmail, setConfirmEmail] = useState(true);
     const [isFocus, setIsFocus] = useState(false);
@@ -19,6 +19,16 @@ const EmailInput = () => {
             setConfirmEmail(false);
         }
     }, [email]);
+
+    const set = () => {
+        setIsFocus(false);
+        setaccount((prevData) => ({
+            ...prevData,
+            email: email
+        }))
+    }
+
+
     return (
         <>
             <div className={isFocus ? "inputWrap active" : "inputWrap"}>
@@ -32,9 +42,10 @@ const EmailInput = () => {
                     onFocus={() => {
                         setIsFocus(true);
                     }}
-                    onBlur={() => {
-                        setIsFocus(false);
-                    }}
+                    // onBlur={() => {
+                    //     setIsFocus(false);
+                    // }}
+                    onBlur={set}
                 />
             </div>
             {confirmEmail ? (
@@ -45,18 +56,30 @@ const EmailInput = () => {
         </>
     );
 };
-const PasswordInput = () => {
+const PasswordInput = ({ setaccount }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [isFocus, setIsFocus] = useState(false);
+    const [isCheck, setIsCheck] = useState(true)
+
+    const set = (e) => {
+        setIsFocus(false);
+        setaccount((prevData) => {
+
+        })
+
+    }
+
+
     return (
         <div
             className={isFocus ? "inputWrap active" : "inputWrap"}
             onFocus={() => {
                 setIsFocus(true);
             }}
-            onBlur={() => {
-                setIsFocus(false);
-            }}
+            // onBlur={() => {
+            //     setIsFocus(false);
+            // }}
+            onBlur={set}
         >
             <input
                 type={isVisible ? "text" : "password"}
@@ -88,8 +111,186 @@ const PasswordInput = () => {
                     </svg>
                 )}
             </div>
+            {
+                isCheck ? null : <div>'비밀번호가 일치하지 않습니다.'</div>
+            }
         </div>
     );
 };
 
-export { TextInput, EmailInput, PasswordInput };
+const API_IdInput = ({ setdata }) => {
+    const [isFocus, setIsFocus] = useState(false);
+
+    const set = (e) => {
+        setIsFocus(false);
+        setdata((prevData) => ({
+            ...prevData,
+            id: e.target.value,
+        }))
+    }
+
+    return (
+        <div
+            className={isFocus ? "inputWrap active" : "inputWrap"}
+            onFocus={() => {
+                setIsFocus(true);
+            }}
+            // onBlur={() => {
+            //     setIsFocus(false);
+            // }}
+            onBlur={set}
+        >
+            <input type="text" placeholder="ID 입력" />
+
+        </div>
+    )
+}
+
+const API_PwInput = ({ setdata }) => {
+    const [isFocus, setIsFocus] = useState(false);
+
+    const set = (e) => {
+        setIsFocus(false);
+        setdata((prevData) => ({
+            ...prevData,
+            pw: e.target.value,
+        }))
+    }
+
+    return (
+        <div
+            className={isFocus ? "inputWrap active" : "inputWrap"}
+            onFocus={() => {
+                setIsFocus(true);
+            }}
+            // onBlur={() => {
+            //     setIsFocus(false);
+            // }}
+            onBlur={set}
+        >
+            <input type="text" placeholder="PW 입력" />
+
+        </div>
+    )
+}
+
+const API_TypeInput = ({ setdata }) => {
+    const [isFocus, setIsFocus] = useState(false);
+
+    const set = (e) => {
+        setIsFocus(false);
+        setdata((prevData) => ({
+            ...prevData,
+            type: e.target.value,
+        }))
+    }
+
+    return (
+        <>
+            <div
+                className={isFocus ? "inputWrap active" : "inputWrap"}
+                onFocus={() => {
+                    setIsFocus(true);
+                }}
+                // onBlur={() => {
+                //     setIsFocus(false);
+                // }}
+                onBlur={set}
+            >
+                <input type="text" placeholder="Type 입력" />
+            </div>
+            {
+                isFocus ? <div className="help_msg">t : 영어/라틴어 전송 (GSM3.38)<br />
+                    tf : 플래시(GSM 3.38)<br />
+                    u : 중국어 또는 아랍어 같은 유니코드 메시지<br />
+                    uf :  중국어 또는 아랍어 같은 플래시 메시지<br />
+                </div> : null
+            }
+        </>
+    )
+}
+
+const API_ToInput = ({ setdata }) => {
+    const [isFocus, setIsFocus] = useState(false);
+
+    const set = (e) => {
+        setIsFocus(false);
+        setdata((prevData) => ({
+            ...prevData,
+            to: e.target.value,
+        }))
+    }
+
+    return (
+        <div
+            className={isFocus ? "inputWrap active" : "inputWrap"}
+            onFocus={() => {
+                setIsFocus(true);
+            }}
+            // onBlur={() => {
+            //     setIsFocus(false);
+            // }}
+            onBlur={set}
+        >
+            <input type="text" placeholder="수신자 전화번호 입력" />
+        </div>
+    )
+}
+
+const API_FromInput = ({ setdata }) => {
+    const [isFocus, setIsFocus] = useState(false);
+
+    const set = (e) => {
+        setIsFocus(false);
+        setdata((prevData) => ({
+            ...prevData,
+            from: e.target.value,
+        }))
+    }
+
+    return (
+        <div
+            className={isFocus ? "inputWrap active" : "inputWrap"}
+            onFocus={() => {
+                setIsFocus(true);
+            }}
+            // onBlur={() => {
+            //     setIsFocus(false);
+            // }}
+            onBlur={set}
+
+        >
+            <input type="text" placeholder="발신자 이름 입력" />
+        </div>
+    )
+}
+
+const API_MessageInput = ({ setdata }) => {
+    const [isFocus, setIsFocus] = useState(false);
+
+    const set = (e) => {
+        setIsFocus(false);
+        setdata((prevData) => ({
+            ...prevData,
+            message: e.target.value,
+        }))
+    }
+
+    return (
+        <div
+            className={isFocus ? "inputWrap active" : "inputWrap"}
+            onFocus={() => {
+                setIsFocus(true);
+            }}
+            // onBlur={() => {
+            //     setIsFocus(false);
+            // }}
+            onBlur={set}
+        >
+            <textarea type="text" placeholder="메세지 내용 입력" />
+        </div>
+    )
+}
+
+
+export { TextInput, EmailInput, PasswordInput, API_IdInput, API_PwInput, API_TypeInput, API_ToInput, API_FromInput, API_MessageInput };
