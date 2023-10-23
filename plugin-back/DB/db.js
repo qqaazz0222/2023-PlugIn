@@ -3,7 +3,7 @@ const mysql = require('mysql2/promise');
 const {
     MYSQL_HOST = 'localhost',
     MYSQL_USER = 'root',
-    MYSQL_PW = '123456',
+    MYSQL_PW = '181428',
     MYSQL_DB = 'Plugin',
 } = process.env;
 

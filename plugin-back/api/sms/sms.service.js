@@ -1,5 +1,7 @@
 const axios = require('axios')
-const aligo = require('aligoapi')
+const {SolapiMessageService} = require('solapi')
+const pool = require('../')
+
 
 class ApiService {
     constructor() { }
@@ -17,32 +19,55 @@ class ApiService {
             const send = await axios.get(url)
                 .then((res) => { console.log(res) })
                 .catch((err) => { console.log(err) })
-
-
-        } catch (error) {
-
+                
+        } catch (e) {
+            console.log(e)
         }
     }
 
     /**
      * (POST) aligo 전송
      */
-    async sendBulk(req) {
+    async sendAligo(req) {
         try {
-            var authData = body.AuthData
-
-            aligo.send(req, authData)
-                .then((r) => {
-                    console.log(r)
-                    res.send(r)
+            await axios.post('https://apis.aligo.in/send/', req,{
+                headers: {
+                    // content-Type을 multipart/form-data 설정
+                    // 그림문자 전송 가능으로 json 방식으로 전송 X
+                    'Content-Type': 'multipart/form-data', 
+                    'Service-Port': '443',
+                }
                 })
-                .catch((e) => {
+                .then((res) => {
+                    console.log('응답 데이터:', res.data);
+                })
+                .catch((error) => {
+                    console.error('에러:', error);
+                })
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    /**
+     * (POST) solapi 전송
+     */
+    async sendSolapi(req) {
+        try {
+
+            const messageService = new SolapiMessageService("NCSNWCXKJAGVQVXM", "EHPLEF4TCV795LRSUXTRM8N2RHISRUCC")
+
+            return messageService.send(req)
+                .then((res)=>{
+                    console.log(res) 
+                    return 200
+                })
+                .catch((e)=>{
                     console.log(e)
-                    res.send(e)
+                    return [404,e]
                 })
-
-        } catch (error) {
-
+        } catch (e) {
+            console.log(e)
         }
     }
 

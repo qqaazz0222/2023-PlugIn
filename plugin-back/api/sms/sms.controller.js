@@ -34,72 +34,46 @@ module.exports = [
         middleware: [],
         controller: async (req, res, next) => {
             try {
-                console.log(req.body)
                 const ServiceInstance = Container.get(Service);
-                const datas = await ServiceInstance.sendBulk(req.body);
-
+                const datas = await ServiceInstance.sendAligo(req.body);
 
             } catch (e) {
                 console.log(e)
             }
         }
-    }
+    },
+
+    /**
+     * (POST) solapi 전송
+     */
+    {
+        path: '/send/solapi',
+        method: 'post',
+        middleware: [],
+        controller: async (req, res, next) => {
+            try {
+                const ServiceInstance = Container.get(Service);
+                const datas = await ServiceInstance.sendSolapi(req.body);
+                console.log(datas[1])
+                if (datas == 200){
+                    return res.status(200).json({
+                        status : 200,
+                        message : 'success send a message'
+                    })
+                }else {
+                    return res.status(404).json({
+                        status:404,
+                        message: datas[1].message
+                    })
+                }
+            } catch (e) {
+                console.log(e)
+            }
+        }
+    },
 
 
 ]
-
-// import axios from "axios";
-
-// const sendBulkSMS = async (datas) => {
-//     let params = {
-//         username: datas.id,
-//         password: datas.pw,
-//         type: datas.type,
-//         to: datas.to,
-//         source: datas.from,
-//         message: datas.message,
-//         //options
-//         scheduled: datas.scheduled, //UTC-04 EX) 2020-01-013T12:49:00
-
-//     }
-//     const url = `https://api.bulksmsonline.co/smsapi?username=${datas.id}&password=${datas.pw}&type=${datas.type}&to=${datas.to}&source=${datas.from}&message=${datas.message}`;
-
-//     const send = await axios.post(url)
-//         .then((res) => { console.log(res) })
-//         .catch((err) => { console.log(err) })
-
-//     console.log(typeof (send))
-
-// }
-
-// const sendAligo = async (datas) => {
-//     let params = {
-//         key: datas.key,
-//         user_id: datas.id,
-//         sender: datas.from, //발신자
-//         recevier: datas.to, //수신자
-//         msg: datas.message,
-
-//         /**options */
-//         msg_type: datas.type,
-//         title: datas.title,
-//         destination: datas.destination,//%고객명% 치환용 입력
-//         rdate: datas.date,
-//         rtime: datas.time,
-//         image1: datas.img1,
-//         image2: datas.img2,
-//         image3: datas.img3,
-//         testmode_yn: '' // input Y when TEST
-//     }
-
-//     const url = 'https://apis.aligo.in/send/'
-
-//     const send = await axios.post(url, { params })
-//         .then((res) => { console.log(res) })
-//         .catch((err) => { console.log(err) })
-
-// }
-
 // const sendEasy = async (datas) => {
 //     let params = {
 //         Username: datas.id,
