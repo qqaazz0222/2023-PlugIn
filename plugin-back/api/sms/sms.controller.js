@@ -55,14 +55,14 @@ module.exports = [
                 const ServiceInstance = Container.get(Service);
                 const datas = await ServiceInstance.sendSolapi(req.body);
                 console.log(datas[1])
-                if (datas == 200){
+                if (datas == 200) {
                     return res.status(200).json({
-                        status : 200,
-                        message : 'success send a message'
+                        status: 200,
+                        message: 'success send a message'
                     })
-                }else {
+                } else {
                     return res.status(404).json({
-                        status:404,
+                        status: 404,
                         message: datas[1].message
                     })
                 }
@@ -71,6 +71,26 @@ module.exports = [
             }
         }
     },
+
+    /**
+     * (POST) vonage 전송 controller
+     */
+
+    {
+        path: '/send/vonage',
+        method: 'post',
+        middleware: [],
+        controller: async (req, res, next) => {
+            try {
+                console.log(req.body)
+                const ServiceInstance = Container.get(Service);
+                const datas = await ServiceInstance.sendVonage(req.body);
+                console.log("res value : " + datas)
+            } catch (e) {
+                console.log(e)
+            }
+        }
+    }
 
 
 ]
